@@ -1,0 +1,42 @@
+#layout-default {
+  .trigger {
+    line-height: @layout-header-height;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+    color: #fff;
+
+    &:hover {
+      color: #1890ff;
+    }
+  }
+
+  .profile {
+    height: @layout-header-height;
+  }
+
+  .ant-layout-sider {
+    will-change: width;
+
+    & + .ant-layout {
+      will-change: margin-left;
+      transition: 0.2s;
+      margin-left: 200px;
+      margin-top: @layout-header-height;
+
+      .ant-layout-header {
+        will-change: width;
+        transition: 0.2s;
+        width: calc(100% - 200px);
+      }
+    }
+
+    &.ant-layout-sider-collapsed + .ant-layout {
+      margin-left: 80px;
+
+      .ant-layout-header {
+        width: calc(100% - 80px);
+      }
+    }
+  }
+}
